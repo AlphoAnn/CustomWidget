@@ -129,5 +129,5 @@ createSeries("africa", "Africa");
 chart.legend = new am4charts.Legend();
     }
   }
-  customElements.define('com-sap-sample-stackbar-prepared', SamplePrepared)
+  customElements.define('com-demo-col1al', SamplePrepared)
 })()      
