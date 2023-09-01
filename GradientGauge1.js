@@ -35,24 +35,9 @@ var getScriptPromisify = (src) => {
       await getScriptPromisify('https://cdn.amcharts.com/lib/4/themes/animated.js');
       await getScriptPromisify('https://cdn.amcharts.com/lib/4/charts.js');
 
-
-/**
- * ---------------------------------------
- * This demo was created using amCharts 4.
- * 
- * For more information visit:
- * https://www.amcharts.com/
- * 
- * Documentation is available at:
- * https://www.amcharts.com/docs/v4/
- * ---------------------------------------
- */
-
 // Themes begin
 am4core.useTheme(am4themes_animated);
 // Themes end
-
-
 
 // create chart
 var chart = am4core.create("chartdiv", am4charts.GaugeChart);
