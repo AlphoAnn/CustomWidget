@@ -82,3 +82,8 @@ hand.radius = am4core.percent(97);
 setInterval(function() {
     hand.showValue(Math.random() * 100, 1000, am4core.ease.cubicOut);
 }, 2000);
+
+    }
+  }
+  customElements.define('com-sap-sample-stackbar-prepared', SamplePrepared)
+})()
