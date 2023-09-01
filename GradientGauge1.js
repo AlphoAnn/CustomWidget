@@ -67,5 +67,5 @@ var getScriptPromisify = (src) => {
 			}, 2000);
 		}
 	}
-	customElements.define('com-demo-gradientgauge1', SamplePrepared)
+	customElements.define("com-demo-gradientgauge1", SamplePrepared)
 })()
