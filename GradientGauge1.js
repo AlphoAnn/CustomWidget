@@ -1,3 +1,41 @@
+var getScriptPromisify = (src) => {
+  return new Promise(resolve => {
+    $.getScript(src, resolve)
+  })
+}
+
+(function () {
+  const prepared = document.createElement('template')
+  prepared.innerHTML = `
+<style>
+</style>
+<div id="root" style="width: 100%; height: 100%;">
+</div>
+`
+  class SamplePrepared extends HTMLElement {
+    constructor() {
+      super()
+
+      this._shadowRoot = this.attachShadow({ mode: 'open' })
+      this._shadowRoot.appendChild(prepared.content.cloneNode(true))
+
+      this._root = this._shadowRoot.getElementById('root')
+
+      this._props = {}
+
+      this.render()
+    }
+
+    onCustomWidgetResize(width, height) {
+      this.render()
+    }
+
+    async render() {
+      await getScriptPromisify('https://cdn.amcharts.com/lib/4/core.js');
+      await getScriptPromisify('https://cdn.amcharts.com/lib/4/themes/animated.js');
+      await getScriptPromisify('https://cdn.amcharts.com/lib/4/charts.js');
+
+
 /**
  * ---------------------------------------
  * This demo was created using amCharts 4.
