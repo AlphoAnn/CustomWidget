@@ -89,5 +89,5 @@ series.dataFields.value = "litres";
 series.dataFields.category = "country";
 		}
 	}
-	customElements.define("com-demo-donut1", SamplePrepared)
+	customElements.define("com-demo-3ddonut1", SamplePrepared)
 })()
