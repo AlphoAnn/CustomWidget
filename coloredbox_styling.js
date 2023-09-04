@@ -42,6 +42,6 @@
 			return this._shadowRoot.getElementById("styling_color").value;
 		}
 	}
-}	
 
 customElements.define("com-sap-sample-coloredbox-styling", ColoredBoxStylingPanel);
+})();
