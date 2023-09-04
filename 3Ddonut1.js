@@ -89,5 +89,5 @@ series.dataFields.value = "litres";
 series.dataFields.category = "country";
 		}
 	}
-	customElements.define("com-demo-gradientgauge1", SamplePrepared)
+	customElements.define("com-demo-3Ddonut1", SamplePrepared)
 })()
