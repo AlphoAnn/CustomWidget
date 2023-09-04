@@ -38,7 +38,7 @@ var getScriptPromisify = (src) => {
             am4core.useTheme(am4themes_animated);
 			
 			// create chart
-			var chart = am4core.create("this._root", am4charts.GaugeChart);
+			var chart = am4core.create(this._root, am4charts.GaugeChart);
 			chart.innerRadius = -15;
 
 			var axis = chart.xAxes.push(new am4charts.ValueAxis());
