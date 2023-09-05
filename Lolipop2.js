@@ -40,7 +40,7 @@ var getScriptPromisify = (src) => {
 			// create chart
 			var chart = am4core.create(this._root, am4charts.XYChart);
 
-		console.log(["rs",resultset1]);
+		console.log(resultset1);
 		var data = [];
 		
 		for(var i = 0; i<resultset1.length; i++){
