@@ -22,14 +22,14 @@ var getScriptPromisify = (src) => {
             this._root = this._shadowRoot.getElementById('root')
 
             this._props = {}
-
+/*
             this.render()
         }
 
         onCustomWidgetResize(width, height) {
             this.render()
         }
-
+*/
         async render(resultset1) {
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/core.js');
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/themes/animated.js');
