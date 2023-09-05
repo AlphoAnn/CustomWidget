@@ -47,7 +47,7 @@ var getScriptPromisify = (src) => {
 			console.log("intheloop");
 			var a = {
 				salesmanager:resultset1[i]["Sales_Manager__5w3m5d06b5"].description,
-				grossmargin:resultset1[i]["@MeasureDimension"].rawvalue
+				grossmargin:resultset1[i]["@MeasureDimension"].rawValue
 			}
 			data.push(a)
 		}
