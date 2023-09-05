@@ -43,7 +43,7 @@ var getScriptPromisify = (src) => {
 		console.log(resultset1);
 		var data = [];
 		
-		for(var i =0;i<resultset1.length;i++){
+		for(var i = 0; i<resultset1.length;i++){
 			var a = {
 				salesmanager:resultset1[i]["Sales_Manager__5w3m5d06b5"].description,
 				grossmargin:resultset1[i]["@MeasureDimension"].rawvalue
