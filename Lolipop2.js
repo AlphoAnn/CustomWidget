@@ -30,7 +30,7 @@ var getScriptPromisify = (src) => {
             this.render()
         }
 
-        async render() {
+        async render(resultset1) {
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/core.js');
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/themes/animated.js');
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/charts.js');
@@ -40,7 +40,20 @@ var getScriptPromisify = (src) => {
 			// create chart
 			var chart = am4core.create(this._root, am4charts.XYChart);
 
-var data = [];
+		console.log(resultset1);
+		var data = [];
+		
+		for(vari=1;i<resultset1.length;i++){
+			var a = {
+				salesmanager:resultset1[i]["Sales_Manager__5w3m5d06b5"].description,
+				grossmargin:resultset1[i]["@MeasureDimension"].rawvalue
+			}
+			data.push(a)
+		}
+
+		chart.data = data;
+		
+/*		
 var value = 120;
 
 var names = ["Raina",
@@ -78,8 +91,10 @@ for (var i = 0; i < names.length; i++) {
   value += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 5);
   data.push({ category: names[i], value: value });
 }
+*/
 
-chart.data = data;
+
+//chart.data = data;
 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.dataFields.category = "category";
