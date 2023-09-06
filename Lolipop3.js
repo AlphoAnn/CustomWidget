@@ -46,8 +46,8 @@ var getScriptPromisify = (src) => {
 		for(var i = 0; i<resultset1.length; i++){
 			console.log("intheloop");
 			var a = {
-				salesmanager:resultset1[i]["Sales_Manager__5w3m5d06b5"].description,
-				grossmargin:resultset1[i]["@MeasureDimension"].rawValue
+				category:resultset1[i]["Sales_Manager__5w3m5d06b5"].description,
+				value:resultset1[i]["@MeasureDimension"].rawValue
 			}
 			data.push(a)
 		}
@@ -98,7 +98,7 @@ for (var i = 0; i < names.length; i++) {
 //chart.data = data;
 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.renderer.grid.template.location = 0;
-categoryAxis.dataFields.category = "salesmanager";
+categoryAxis.dataFields.category = "category";
 categoryAxis.renderer.minGridDistance = 15;
 categoryAxis.renderer.grid.template.location = 0.5;
 categoryAxis.renderer.grid.template.strokeDasharray = "1,3";
@@ -116,8 +116,8 @@ valueAxis.renderer.ticks.template.disabled = true;
 valueAxis.renderer.axisFills.template.disabled = true;
 
 var series = chart.series.push(new am4charts.ColumnSeries());
-series.dataFields.categoryX = "salesmanager";
-series.dataFields.valueY = "grossmargin";
+series.dataFields.categoryX = "category";
+series.dataFields.valueY = "value";
 series.tooltipText = "{valueY.value}";
 series.sequencedInterpolation = true;
 series.fillOpacity = 0;
@@ -135,5 +135,5 @@ chart.scrollbarY = new am4core.Scrollbar();
 
 		}
 	}
-	customElements.define("com-demo-lolipop2", SamplePrepared)
+	customElements.define("com-demo-lolipop3", SamplePrepared)
 })()
