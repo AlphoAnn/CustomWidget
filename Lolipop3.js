@@ -46,7 +46,7 @@ var getScriptPromisify = (src) => {
 		for(var i = 0; i<resultset1.length; i++){
 			console.log("intheloop");
 			var a = {
-				category:resultset1[i]["Sales_Manager__5w3m5d06b5"].description,
+				category:resultset1[i][dim].description,
 				value:resultset1[i]["@MeasureDimension"].rawValue
 			}
 			data.push(a)
