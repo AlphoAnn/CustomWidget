@@ -118,7 +118,7 @@ valueAxis.strictMinMax = true;
 valueAxis.renderer.minGridDistance = 30;
 // axis break
 var axisBreak = valueAxis.axisBreaks.create();
-axisBreak.startValue = 40000000;
+axisBreak.startValue = 25000000;
 axisBreak.endValue = 100000000;
 //axisBreak.breakSize = 0.005;
 
