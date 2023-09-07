@@ -150,5 +150,5 @@ series.columns.template.adapter.add("fill", function(fill, target) {
 });
 		}
 	}
-	customElements.define("com-demo-colchrtaxbrk1", SamplePrepared)
+	customElements.define("com-demo-colchrtaxbrk2", SamplePrepared)
 })()
