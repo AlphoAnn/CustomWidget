@@ -42,7 +42,7 @@ var chart = am4core.create(this._root, am4charts.XYChart);
 chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 // get data from the resultset	passed from SAC	
 var data = [];
-console.log(resultset1.length);		
+console.log(["r",resultset1.length]);		
 		for(var i = 0; i<resultset1.length; i++){
 			console.log("in col chrt");
 			var a = {
@@ -54,8 +54,8 @@ console.log(resultset1.length);
 
 		chart.data = data;
 /*		
-chart.data = [
-  {
+//chart.data = [
+//  {
     country: "USA",
     visits: 23725
   },
@@ -151,8 +151,8 @@ axisBreak.events.on("out", function() {
 });*/
 
 var series = chart.series.push(new am4charts.ColumnSeries());
-series.dataFields.categoryX = category;
-series.dataFields.valueY = value;
+series.dataFields.categoryX = "category";
+series.dataFields.valueY = "value";
 series.columns.template.tooltipText = "{valueY.value}";
 series.columns.template.tooltipY = 0;
 series.columns.template.strokeOpacity = 0;
