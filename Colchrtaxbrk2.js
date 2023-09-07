@@ -30,7 +30,7 @@ var getScriptPromisify = (src) => {
             this.render()
         }
 
-        async render() {
+        async render(resultset) {
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/core.js');
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/themes/animated.js');
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/charts.js');
@@ -40,7 +40,20 @@ am4core.useTheme(am4themes_animated);
 
 var chart = am4core.create(this._root, am4charts.XYChart);
 chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+// get data from the resultset	passed from SAC	
+var data = [];
+		
+		for(var i = 0; i<resultset1.length; i++){
+			console.log("in col chrt");
+			var a = {
+				category:resultset1[i]["Product_3e315003an"].description,
+				value:resultset1[i]["@MeasureDimension"].rawValue
+			}
+			data.push(a)
+		}
 
+		chart.data = data;
+/*		
 chart.data = [
   {
     country: "USA",
@@ -91,22 +104,22 @@ chart.data = [
     visits: 441
   }
 ];
-
+*/
 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.renderer.grid.template.location = 0;
-categoryAxis.dataFields.category = "country";
+categoryAxis.dataFields.category = category;
 categoryAxis.renderer.minGridDistance = 40;
 categoryAxis.fontSize = 11;
 
 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 valueAxis.min = 0;
-valueAxis.max = 24000;
+valueAxis.max = 120000000;
 valueAxis.strictMinMax = true;
 valueAxis.renderer.minGridDistance = 30;
 // axis break
 var axisBreak = valueAxis.axisBreaks.create();
-axisBreak.startValue = 2100;
-axisBreak.endValue = 22900;
+axisBreak.startValue = 40000000;
+axisBreak.endValue = 100000000;
 //axisBreak.breakSize = 0.005;
 
 // fixed axis break
@@ -138,8 +151,8 @@ axisBreak.events.on("out", function() {
 });*/
 
 var series = chart.series.push(new am4charts.ColumnSeries());
-series.dataFields.categoryX = "country";
-series.dataFields.valueY = "visits";
+series.dataFields.categoryX = category;
+series.dataFields.valueY = value;
 series.columns.template.tooltipText = "{valueY.value}";
 series.columns.template.tooltipY = 0;
 series.columns.template.strokeOpacity = 0;
