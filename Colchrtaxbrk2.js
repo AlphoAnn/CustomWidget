@@ -42,7 +42,7 @@ var chart = am4core.create(this._root, am4charts.XYChart);
 chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 // get data from the resultset	passed from SAC	
 var data = [];
-		
+console.log(resulset1.length);		
 		for(var i = 0; i<resultset1.length; i++){
 			console.log("in col chrt");
 			var a = {
@@ -107,7 +107,7 @@ chart.data = [
 */
 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.renderer.grid.template.location = 0;
-categoryAxis.dataFields.category = category;
+categoryAxis.dataFields.category = "category";
 categoryAxis.renderer.minGridDistance = 40;
 categoryAxis.fontSize = 11;
 
