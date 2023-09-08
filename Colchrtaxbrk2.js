@@ -30,7 +30,7 @@ var getScriptPromisify = (src) => {
             this.render()
         }
 
-        async render(resultset1) {
+        async render(dim,resultset1) {
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/core.js');
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/themes/animated.js');
             await getScriptPromisify('https://cdn.amcharts.com/lib/4/charts.js');
@@ -46,7 +46,7 @@ console.log(["r",resultset1.length]);
 		for(var i = 0; i<resultset1.length; i++){
 			console.log("in col chrt");
 			var a = {
-				category:resultset1[i]["Product_3e315003an"].description,
+				category:resultset1[i][dim].description,
 				value:resultset1[i]["@MeasureDimension"].rawValue
 			}
 			data.push(a)
