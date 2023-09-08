@@ -118,10 +118,10 @@ valueAxis.strictMinMax = true;
 valueAxis.renderer.minGridDistance = 30;
 // axis break
 var axisBreak = valueAxis.axisBreaks.create();
-console.log(resultset1[1]["@MeasureDimension"].rawValue + 10000);
-console.log(resultset1[0]["@MeasureDimension"].rawValue - 10000);
-axisBreak.startValue = (resultset1[1]["@MeasureDimension"].rawValue + 10000);
-axisBreak.endValue = (resultset1[0]["@MeasureDimension"].rawValue - 10000);
+console.log(resultset1[1]["@MeasureDimension"].rawValue + 40000);
+console.log(resultset1[0]["@MeasureDimension"].rawValue - 40000);
+axisBreak.startValue = (resultset1[1]["@MeasureDimension"].rawValue + 40000);
+axisBreak.endValue = (resultset1[0]["@MeasureDimension"].rawValue - 40000);
 //axisBreak.breakSize = 0.005;
 
 // fixed axis break
